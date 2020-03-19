@@ -3,7 +3,15 @@
 ## 测试代码
 启动celery:   
 ```
-celery -A run:celery_app worker -l info
+项目根目录下，输入命令:
+celery -A run:celery_app worker -l info 
+此时celery在终端窗口运行，关闭终端celery就会停止。
+----------------------------------------------
+输入命令:
+celery multi start w1 -A run:celery_app -l info --logfile = celerylog.log --pidfile = celerypid.pid 
+此时celery为守护进程，日志记录在celerylog.log里。
+日志文件可以指定路径PATH/celerylog.log，此时会在指定路径下创建日志文件。进程号文件类似。
+停止或重启将开始换为stop或restart即可，所以需记录w1，即需记录woker的名称来方便重启和停止。
 ```
 启动Flask APP:   
 ```
