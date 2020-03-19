@@ -21,5 +21,5 @@ python run.py
 ```  
 celery -A run:celery_app flower -l info 
 ```
-浏览器访问http://localhost:5555可以查看任务状态!
+浏览器访问http://localhost:5555 可以查看任务状态!
 
