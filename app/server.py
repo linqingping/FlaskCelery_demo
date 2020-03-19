@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 from flask import request,url_for
 from flask_restful import Resource,Api
-from .celery import add, flask_app_context,long_task
+from .celery import add, flask_app_context,long_task　#导入celery的task
 import jsonify
+
+# 实现路由的具体操作类
 
 class Servers(Resource):
     def get(self):
